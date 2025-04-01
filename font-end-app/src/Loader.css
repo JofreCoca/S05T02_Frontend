@@ -1,0 +1,39 @@
+/* Contenedor de la pantalla de carga */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black; /* Fondo oscuro */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Animación del logo */
+.loading-logo {
+  width: 150px;
+  height: auto;
+  animation: fadeIn 1.5s ease-in-out, bounce 1.5s infinite;
+}
+
+/* Efecto de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pequeño rebote */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
