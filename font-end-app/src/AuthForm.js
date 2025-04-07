@@ -50,9 +50,12 @@ function AuthPage() {
       }
 
       if (response.ok) {
+
         if (isLogin) {
+
           console.log("Login exitoso:", data);
-          localStorage.setItem("token", data?.token || "");
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user", data.username);
           setMessage("Inicio de sesión exitoso");
           setMessageType("success");
           navigate("/dashboard"); // Redirige al dashboard o página de inicio
