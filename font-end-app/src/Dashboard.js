@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { jwtDecode } from "jwt-decode";
-import user from './uploaders/5user.jpg';
 import dog from './uploaders/5dog.jpg';
 import logoSimple from './logoSimple.png';
 
@@ -18,7 +17,7 @@ const Dashboard = () => {
     const token = localStorage.getItem("token");
     if (token) {
       const decoded = jwtDecode(token);
-      setEmail(decoded.user);
+      setEmail(decoded.email);
       setPhotoUrl(decoded.photo_url); // ← Obtener photo_url del token
       setIsAuthenticated(true);
     } else {
@@ -44,13 +43,17 @@ const Dashboard = () => {
           Cerrar Sesión
         </button>
       </div>
-        <div className="photo-container">
-          <img src={user} alt="Perfil" className="profile-photo-user" />
-        </div>
+<div className="photo-container">
+  {photoUrl ? (
+    <img src="http://localhost:8080/api/upload/clicaUser.png" alt="Logo" />
+  ) : (
+    <div className="photo-placeholder">Clica aquí para subir imagen</div>
+  )}
+</div>
         <div className="photo-container">
           <img src={dog} alt="Perfil" className="profile-photo-dog" />
         </div>
-
+        <h1 className="welcome-text">*{photoUrl}*</h1>
       <div className="dashboard-container">
         {/* Aquí puedes mostrar el resto de la información del usuario */}
       </div>

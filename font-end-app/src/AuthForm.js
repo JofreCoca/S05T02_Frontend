@@ -50,9 +50,7 @@ function AuthPage() {
       }
 
       if (response.ok) {
-
         if (isLogin) {
-
           console.log("Login exitoso:", data);
           localStorage.setItem("token", data.token);
           localStorage.setItem("email", data.token);
