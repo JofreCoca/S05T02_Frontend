@@ -19,7 +19,7 @@
   font-size: 1.5rem;
   color: white;
   margin-right: auto;
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .logout-button {
@@ -59,6 +59,77 @@
   width: 250px;
 }
 
+/* Contenedor de perros */
+.dogs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+  gap: 20px; /* Espacio entre tarjetas */
+  margin-top: 20px;
+  font-size: 1.5rem;
+  min-height: 100vh; /* Hace que el contenedor ocupe al menos toda la altura de la pantalla */
+}
+
+/* Estilo de las tarjetas de perros */
+.dogs-card {
+  background-color: rgba(25, 25, 25, 1); /* Fondo oscuro */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px; /* Relleno dentro de la tarjeta */
+  width: 250px; /* Ancho fijo de la tarjeta */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); /* Sombra de la tarjeta */
+  color: white; /* Color de texto blanco */
+  transition: transform 0.2s ease-in-out; /* Efecto al pasar el ratón sobre la tarjeta */
+
+  /* Animación de escala para aparecer */
+  animation: scaleIn 0.5s ease-out;
+}
+
+/* Efecto al pasar el ratón sobre la tarjeta */
+.dogs-card:hover {
+  transform: scale(1.05); /* Escala la tarjeta */
+}
+
+/* Animación de aparición (crecer) */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8); /* Empieza pequeño */
+  }
+  to {
+    transform: scale(1); /* Crece al tamaño normal */
+  }
+}
+
+/* Título de la tarjeta (nombre del perro) */
+.dogs-card h4 {
+  font-size: 2rem; /* Tamaño de fuente grande */
+  margin-bottom: 10px;
+}
+
+/* Estilo de la imagen del perro */
+.dog-photo {
+  width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+  object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+}
+
+.delete-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #0056b3;
+}
+
+
 .profile-image {
   width: 120px;
   height: 120px;
@@ -76,21 +147,6 @@
 }
 /* fin foto logo simple */
 
-/* la foto de dog*/
-.photo-container-dog {
-  padding: 10px 20px;
-}
-
-.profile-photo-dog {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  border: 2px solid white;
-  object-fit: cover;
-  margin-left: 60px;
-  margin-top: -25px;
-}
-/* Finito la foto de dog*/
 
 /* la foto de usuario*/
 .photo-container-user {
@@ -103,7 +159,7 @@
   border-radius: 50%;
   border: 2px solid white;
   object-fit: cover;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: 20px;
 }
 /* Finito la foto de usuario*/
