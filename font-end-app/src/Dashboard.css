@@ -92,14 +92,21 @@
 }
 
 /* Animación de aparición (crecer) */
-@keyframes scaleIn {
+@keyframes scaleInDashboard {
   from {
-    transform: scale(0.8); /* Empieza pequeño */
+    transform: scale(0.8);
   }
   to {
-    transform: scale(1); /* Crece al tamaño normal */
+    transform: scale(1);
   }
 }
+
+/* Usa la animación en dogs-card */
+.dogs-card {
+  /* demás estilos... */
+  animation: scaleInDashboard 0.5s ease-out;
+}
+
 
 /* Título de la tarjeta (nombre del perro) */
 .dogs-card h4 {
@@ -117,7 +124,7 @@
 .delete-button {
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #007bff;
+    background-color: #e74c3c;
     color: white;
     border: none;
     border-radius: 5px;
@@ -126,8 +133,54 @@
 }
 
 .delete-button:hover {
-  background-color: #0056b3;
+  background-color: #c0392b;
 }
+
+
+
+/*para new dog*/
+
+.new-dog-card {
+  background-color: rgba(25, 25, 25, 1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: transform 0.2s ease-in-out;
+  animation: scaleInDashboard 0.5s ease-out;
+}
+
+/* Inputs dentro de la tarjeta nueva */
+.new-dog-card input,
+.new-dog-card select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Botón de crear nueva mascota */
+.create-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #007bff; /* Igual que delete-button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-button:hover {
+  background-color: #0056b3; /* Igual que delete-button:hover */
+}
+
+
+
+/*////////////////////*/
 
 
 .profile-image {
@@ -163,4 +216,90 @@
   margin-top: 20px;
 }
 /* Finito la foto de usuario*/
+
+/* Uniformizar inputs y selects en nueva mascota */
+.new-dog-card input,
+.new-dog-card select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px; /* un poquito más de padding para mejor sensación */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem; /* Tamaño de letra igual para input y select */
+  background-color: #f0f0f0; /* Fondo claro para ambos */
+  color: #333; /* Texto oscuro */
+  appearance: none; /* Quita el estilo nativo del select en algunos navegadores */
+}
+
+/* Opcional: Añadir un pequeño ícono de flecha para select */
+.new-dog-card select {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="none" stroke="%23333" stroke-width="2" d="M1 1l5 5 5-5"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 8px;
+}
+
+/* Para centrar mejor el contenido */
+.new-dog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-dog-card form {
+  width: 100%;
+}
+
+.new-dog-card input,
+.new-dog-card select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.new-dog-card {
+  padding-top: 0px; /* o menos si quieres aún más ajustado */
+}
+
+.dog-photo {
+  width: 100%;
+  height: 200px; /* Por ejemplo */
+  border-radius: 10px;
+  object-fit: cover; /* Esto es importante: recorta bien la foto */
+  margin-bottom: 10px; /* Espacio debajo de la foto */
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 10px;
+}
+
+
+.edit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #c0392b;
+}
+
 
