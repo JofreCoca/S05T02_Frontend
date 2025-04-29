@@ -10,6 +10,7 @@ import Chihuahua from './uploaders/Chihuahua.jpg';
 import GoldenRetriever from './uploaders/GoldenRetriever.png';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [editingDog, setEditingDog] = useState(null);
   const [email, setEmail] = useState(null);
   const [photoUrl, setPhotoUrl] = useState(null);
@@ -24,13 +25,11 @@ const Dashboard = () => {
     photo_url: "",
   });
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
       setErrorMessage("No token found in localStorage");
-      navigate("/");
+      navigate("/AuthForm");
       return;
     }
 
@@ -42,7 +41,7 @@ const Dashboard = () => {
     } catch (err) {
       console.error("Token inválido o corrupto:", err);
       setErrorMessage("Token inválido");
-      navigate("/");
+      navigate("/AuthForm");
     }
   }, [navigate]);
 
